@@ -13,7 +13,7 @@ const app = express.Router();
 app.get("/stats", adminOnly, getDashboardStats);
 
 // route - /api/v1/dashboard/pie
-app.get("/pie", getPieCharts);
+app.get("/pie", adminOnly, getPieCharts);
 
 // route - /api/v1/dashboard/bar
 app.get("/bar", adminOnly, getBarCharts);

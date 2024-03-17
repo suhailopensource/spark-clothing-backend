@@ -81,7 +81,7 @@ export const deleteUser = TryCatch(
 
     await user.deleteOne();
 
-    // await invalidateCache({ admin: true });
+    await invalidateCache({ admin: true });
 
     res.status(200).json({
       success: true,

@@ -125,6 +125,9 @@ export const deleteProduct = TryCatch(async (req, res, next) => {
     return next(new ErrorHandler("Invalid Product ID", 400));
   }
 
+  rm(product.photo!, () => {
+    console.log("Product Photo Deleted");
+  });
   await product.deleteOne();
   await invalidateCache({
     product: true,
